@@ -21,22 +21,34 @@
 
 ### 2. Configure Project Settings
 
+**CRITICAL**: Before clicking Deploy, configure these settings:
+
 **Root Directory**:
-- Set to: `thaifighttalk`
-- This tells Vercel where your Next.js app lives
+1. Click **Edit** next to "Root Directory"
+2. Set to: `thaifighttalk`
+3. This tells Vercel where your Next.js app lives
 
 **Framework Preset**:
 - Should auto-detect as: **Next.js**
+- If not, manually select **Next.js**
 
-**Build Command** (leave default):
+**Build Command** (leave default or set to):
 ```bash
 npm run build
+```
+
+**Output Directory** (leave default):
+```
+.next
 ```
 
 **Install Command** (leave default):
 ```bash
 npm install
 ```
+
+**Node.js Version**:
+- Set to: **20.x** (recommended)
 
 ### 3. Add Environment Variables
 
@@ -203,22 +215,21 @@ Check that these tables exist:
 
 ---
 
-## Vercel Configuration Files
+## Vercel Configuration
 
-### vercel.json (Root)
-```json
-{
-  "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "rootDirectory": "thaifighttalk"
-}
-```
+### Configuration via Vercel UI (Recommended)
 
-This tells Vercel:
-- Where your Next.js app is (`thaifighttalk/`)
-- How to build it (`npm run build`)
-- What framework you're using (`nextjs`)
+All project settings are configured through the Vercel UI:
+
+1. **Root Directory**: Set to `thaifighttalk` in Project Settings
+2. **Framework**: Next.js (auto-detected)
+3. **Build Command**: `npm run build`
+4. **Install Command**: `npm install`
+5. **Node.js Version**: 20.x
+
+### No vercel.json Required
+
+For monorepo setups with Next.js, Vercel's UI configuration is the recommended approach. The `rootDirectory` setting in the UI replaces the need for `vercel.json`.
 
 ---
 
