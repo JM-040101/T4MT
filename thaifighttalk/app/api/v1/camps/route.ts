@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { handleAPIError } from '@/lib/api/errors'
 
@@ -6,7 +6,7 @@ import { handleAPIError } from '@/lib/api/errors'
  * GET /api/v1/camps
  * Fetch all training camps with unlock status
  */
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const supabase = await createClient()
 

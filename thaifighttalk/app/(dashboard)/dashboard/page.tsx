@@ -124,7 +124,7 @@ export default async function DashboardPage() {
         <div>
           <h2 className="text-2xl font-bold mb-4">Recent Achievements</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {recentBadges.map((ub: any) => (
+            {recentBadges.map((ub) => (
               <Card key={ub.badge_id}>
                 <CardContent className="pt-6 text-center">
                   <div className="text-4xl mb-2">🏆</div>
